@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KG^DIMS¥ — Game Services & Premium Digital Goods</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00eaff;
+      --accent: #f44f8a;
+      --bg-gradient: linear-gradient(135deg, #0d0c21 0%, #1e084b 100%);
+      --card-bg: rgba(26, 19, 60, 0.85);
+      --glass-bg: rgba(255,255,255,0.08);
+      --border-glass: rgba(255,255,255,0.16);
+      --button-gradient: linear-gradient(90deg, #00eaff 0%, #f44f8a 100%);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg-gradient);
+      color: #fff;
+      min-height: 100vh;
+    }
+    header {
+      padding: 2.5rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    .logo-title {
+      font-family: 'Orbitron', 'Montserrat', Arial, sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.11em;
+      color: var(--primary);
+      text-shadow:
+        0 0 10px #00eaff,
+        0 0 24px #4ff5ff,
+        0 2px 0 #0d0c21;
+      font-weight: bold;
+      margin-top: 0.3em;
+      margin-bottom: 0.25em;
+      display: inline-block;
+    }
+    .logo-title span {
+      font-size: 1.2em;
+      margin-left: 0.3em;
+      vertical-align: middle;
+      color: #fff8cc;
+      text-shadow: 0 0 14px #ffe066,0 0 28px #ffd700;
+    }
+    .subtitle {
+      font-size: 1.13rem;
+      color: #d3d3f5;
+      margin-bottom: 1.6rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 2.7rem;
+    }
+    .btn {
+      background: var(--button-gradient);
+      color: #fff;
+      padding: 1rem 2.3rem;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1.17rem;
+      font-weight: 600;
+      box-shadow: 0 2px 12px #00eaff33;
+      cursor: pointer;
+      transition: transform 0.14s, box-shadow 0.14s;
+      text-decoration: none;
+      outline: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 18px #f44f8a33;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto 0 auto;
+      padding: 0 1.2rem 3rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      justify-content: center;
+    }
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.7rem;
+      box-shadow: 0 8px 40px #1e084b44;
+      padding: 2rem;
+      min-width: 300px;
+      max-width: 420px;
+      flex: 1 1 320px;
+      backdrop-filter: blur(7px);
+      border: 1.5px solid var(--border-glass);
+      margin-bottom: 1rem;
+    }
+    .card h2 {
+      color: var(--primary);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.04em;
+      margin-top: 0;
+      font-size: 1.35rem;
+    }
+    .card ul {
+      list-style: disc inside;
+      margin: 0.7rem 0 0.9rem 1rem;
+      color: #e5d3ff;
+      font-size: 1rem;
+    }
+    .card strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .card .price {
+      font-size: 1.13rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .card .note {
+      color: #f9b9e3;
+      font-size: 0.97rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    .section-title {
+      color: var(--primary);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.13rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .info-list {
+      background: var(--glass-bg);
+      border-radius: 1.1rem;
+      border: 1.2px solid var(--border-glass);
+      padding: 1.3rem 1.2rem;
+      margin-bottom: 1.1rem;
+      color: #e1e1f9;
+      box-shadow: 0 2px 20px #00eaff11;
+      font-size: 1.01rem;
+    }
+    .support {
+      font-size: 1.04rem;
+      color: #f8d0fa;
+      margin-top: 0.6rem;
+    }
+    .faq {
+      background: var(--glass-bg);
+      border-radius: 1.1rem;
+      border: 1.2px solid var(--border-glass);
+      padding: 1rem 1.2rem;
+      font-size: 0.99rem;
+      color: #e1e1f9;
+    }
+    .faq strong {
+      color: var(--accent);
+    }
+    .about-card {
+      background: var(--glass-bg);
+      border-radius: 1.1rem;
+      border: 1.2px solid var(--border-glass);
+      padding: 1.3rem 1.2rem;
+      color: #e1e1f9;
+      font-size: 1.03rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 18px #00eaff17;
+    }
+    a, a:visited {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    a.btn, a.btn:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      color: #b6aeea;
+      font-size: 0.99rem;
+      margin: 2.7rem 0 1.1rem 0;
+      opacity: 0.88;
+    }
+    @media (max-width: 950px) {
+      .card-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        max-width: 98vw;
+      }
+      main {
+        padding: 0 0.1rem 2rem 0.1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .logo-title {
+        font-size: 2.1rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 1.01rem;
+      }
+      main {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-title">
+      KG^DIMS¥
+      <span>💎</span>
+    </div>
+    <div class="subtitle">
+      Game Services & Premium Digital Goods<br>
+      Buy premium game upgrades, verified digital services, and get fast admin support.<br>
+      Choose your product, pay securely to our listed business accounts, then confirm via WhatsApp for instant delivery.
+    </div>
+    <div class="hero-buttons">
+      <a href="#products" class="btn">Shop Now</a>
+      <a href="https://wa.me/2349153882605" class="btn" style="background: var(--primary);">Contact Admin</a>
+    </div>
+  </header>
+  <main>
+    <section id="about">
+      <div class="section-title">About Us</div>
+      <div class="about-card">
+        KG^DIMS¥ is a trusted gaming services hub dedicated to delivering high-quality digital game products and services.<br>
+        We help serious players upgrade their gameplay with premium items, performance packs, and pro-level optimizations.<br>
+        Our team handles customer support personally — transfers are verified manually and items/services are delivered after confirmation.<br>
+        <br>
+        We prioritize clear communication: make your payment using the exact account details shown at checkout, then notify us on WhatsApp so we can verify and deliver promptly.<br>
+        <br>
+        <strong>Contact email:</strong> <a href="mailto:kgdims0001@gmail.com">kgdims0001@gmail.com</a>
+      </div>
+    </section>
+    <section id="products">
+      <div class="section-title">Our Products</div>
+      <div class="card-row">
+        <div class="card">
+          <h2>Free Fire Guest Account — “Proxy”</h2>
+          <ul>
+            <li>Guest login only (private & simple)</li>
+            <li>Many unlocked skins, rare emotes, and premium items</li>
+            <li>Large diamond balance and cosmetic inventory</li>
+            <li>Smooth shooting performance and great headshot accuracy</li>
+            <li>Clean account — no hacks or ban history</li>
+          </ul>
+          <div class="note">
+            <strong>Transfer:</strong> Account is transferred immediately after admin payment verification.<br>
+            <strong>Note:</strong> Serious buyers only — contact admin for screenshots, proof, and pricing.
+          </div>
+        </div>
+        <div class="card">
+          <h2>Unlimited Diamonds & Headshot Hack</h2>
+          <ul>
+            <li>Unlimited Diamonds package</li>
+            <li>Headshot Hack Pack for improved headshot accuracy</li>
+            <li>Unlimited emotes and ammo (where applicable)</li>
+            <li>Performance improvements for a better in-game experience</li>
+          </ul>
+          <div class="price">
+            Headshot Hack — ₦5,000<br>
+            Unlimited Diamonds — ₦8,000
+          </div>
+          <div class="note">
+            Select your service, pay, and confirm on WhatsApp for instant delivery after verification.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="how-to-buy">
+      <div class="section-title">How to Buy</div>
+      <div class="info-list">
+        <ol>
+          <li>Click <strong>Buy Now</strong> on the product page.</li>
+          <li>Select a payment method (Kuda, Moniepoint, Palmpay).<br>
+              The site will show the exact account/phone number to transfer to.</li>
+          <li>Transfer the exact amount to the selected account.</li>
+          <li>After payment, click <strong>I’ve Paid — Message Admin</strong> (opens WhatsApp to <span style="color:#ffd;">+234 915 388 2605</span> with a pre-filled message including all your details).</li>
+          <li>Attach your payment screenshot in WhatsApp. Admin will verify and deliver your product/service upon confirmation.</li>
+        </ol>
+        <div style="margin-top:0.6rem;color:#f8d0fa;"><strong>Important:</strong> Verification is manual. Never share sensitive banking passwords. Keep proof of your transfer until admin confirms.</div>
+      </div>
+    </section>
+    <section id="payment">
+      <div class="section-title">Payment Details</div>
+      <div class="info-list">
+        <strong>Kuda Bank:</strong> DUMOYE, DESTINY ABDUL QUADRI — <span style="color:#ffd;">2081794843</span><br>
+        <strong>Moniepoint MFB:</strong> ABDUL QUADRI DESTINY DUMOYE — <span style="color:#ffd;">9014690789</span><br>
+        <strong>Palmpay (primary):</strong> Miracle Chika — <span style="color:#ffd;">9030516292</span><br>
+        <strong>Palmpay (alternate):</strong> <span style="color:#ffd;">+234 915 952 9768</span><br>
+        <br>
+        <span style="color:#f9b9e3;">
+          On checkout, make sure you select which account/phone you paid to — include that exact account/phone number in your WhatsApp confirmation!
+        </span>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="section-title">Contact & Support</div>
+      <div class="info-list">
+        <strong>WhatsApp (primary):</strong> <a href="https://wa.me/2349153882605" style="color:#f44f8a;">+234 915 388 2605</a><br>
+        <strong>Email:</strong> <a href="mailto:kgdims0001@gmail.com" style="color:#00eaff;">kgdims0001@gmail.com</a><br>
+        <strong>Phone (US contact):</strong> +1 (737) 615-1139<br>
+        <div class="support">
+          If you don’t get a response immediately, please wait for admin to verify the payment. Replies may take a short time during busy hours.
+        </div>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="section-title">FAQ</div>
+      <div class="faq">
+        <strong>Q:</strong> How long until I receive my item after payment?<br>
+        <strong>A:</strong> Once you send proof of payment on WhatsApp and admin verifies it, delivery is usually immediate (within a few minutes).<br><br>
+        <strong>Q:</strong> What if I sent the money to the wrong account?<br>
+        <strong>A:</strong> Double-check the account/phone before sending funds — mistakes are the buyer’s responsibility. Contact admin immediately via WhatsApp with transfer proof.<br><br>
+        <strong>Q:</strong> Are these transfers automatic?<br>
+        <strong>A:</strong> No — verification is manual. Admin will always confirm before any transfer of account credentials or services.
+      </div>
+    </section>
+    <section id="terms">
+      <div class="section-title">Terms & Disclaimer</div>
+      <div class="info-list">
+        All purchases are final once payment is confirmed and the product/service is delivered.<br>
+        KG^DIMS¥ does not store or process customers’ bank PINs or passwords.<br>
+        Buyers must ensure purchases comply with their game/platform terms of service. KG^DIMS¥ is not responsible for platform-specific account rules and outcomes.<br>
+        Admin reserves the right to refuse sale or delay delivery if payment cannot be verified.
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 KG^DIMS¥. All rights reserved.
+  </footer>
+</body>
+</html>
